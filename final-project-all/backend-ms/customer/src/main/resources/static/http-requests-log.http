@@ -1,0 +1,27 @@
+POST http://localhost:8081/api/customer/user-form
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-17T232244.200.txt
+
+###
+
+GET http://localhost:8081/api/customer
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-17T232241.200.txt
+
+###
+
+GET http://localhost:8081/api/auth
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-17T232218.200.txt
+
+###
