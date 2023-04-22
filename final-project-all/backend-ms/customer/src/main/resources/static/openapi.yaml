@@ -1,0 +1,10 @@
+openapi: 3.0.3
+info:
+  title: "Finance & Stock"
+  description: "Trabalho apressentado como requisito parcial para a disciplina de Projeto Final I: Especificação e Design, 
+    do curso de BAcharelado em Sistemas de Informação, da PUC/PR"
+  version: 1.0.0
+servers:
+  - url: 'http://localhost:8080/api'
+paths:
+  

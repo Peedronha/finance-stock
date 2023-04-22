@@ -1,0 +1,39 @@
+server:
+  port: 8081
+#  servlet:
+#    context-path: /finance-and-stock/v1
+
+spring:
+  application:
+    name: finance-and-stock
+#  jackson:
+#    date-format: "dd/MM/yyyy"
+  devtools:
+    add-properties: true
+    remote:
+      restart:
+        enabled: true
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/financestockdb?createDatabaseIfNotExist=true&serverTimezone=UTC
+    username: root
+    password: root
+    jpa:
+      hibernate:
+        ddl-auto: create
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.MySQLDialect
+      open-in-view: false
+
+springdoc:
+  api-docs:
+    path: /api-docs
+    version: openapi_3_0
+  swagger-ui:
+    path: /swagger-ui.html
+  default-consumes-media-type: application/json
+  default-produces-media-type: application/json
+
+logging:
+  level:
+    web: debug

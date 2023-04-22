@@ -1,7 +1,7 @@
 server:
-  servlet:
-    context-path: /api
-  port: 8081
+  #  servlet:
+  #    context-path: /api
+  port: 8080
 
 spring:
   application:
@@ -9,24 +9,26 @@ spring:
   devtools:
     add-properties: true
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/db_customer
+    url: jdbc:mysql://127.0.0.1:3306/db_customer?createDatabaseIfNotExist=true&serverTimezone=UTC
     username: root
     password: root
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
     open-in-view: true
 
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          jwk-set-uri: http://localhost:8180/realms/eazybankdev/protocol/openid-connect/certs
+springdoc:
+  api-docs:
+    path: /api-docs
+    version: openapi_3_0
+  swagger-ui:
+    path: /swagger-ui.html
+  default-consumes-media-type: application/json
+  default-produces-media-type: application/json
 
 logging:
   level:
     web: debug
-

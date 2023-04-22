@@ -1,0 +1,11 @@
+POST /register HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "email": "suzi@exemplo.com",
+  "mobileNumber": "987456123",
+  "name": "Suzi",
+  "pwd": "9512364",
+  "role": "user"
+}
