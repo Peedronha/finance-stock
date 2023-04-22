@@ -27,11 +27,9 @@ public class CustomerController {
 
         Customer savedCustomer = null;
         ResponseEntity response = null;
-
         try {
-            String hashPwd = passwordEncoder.encode(customer.getPassword());
-            customer.setPassword(hashPwd);
-            customer.setRegistrationDate(String.valueOf(new Date(System.currentTimeMillis())));
+            String hashPwd = passwordEncoder.encode(customer.getPwd());
+            customer.setPwd(hashPwd);
             savedCustomer = customerRepository.save(customer);
             if (savedCustomer.getCustomerId() > 0) {
                 response = ResponseEntity
@@ -43,7 +41,6 @@ public class CustomerController {
                     .status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("An exception occured due to " + ex.getMessage());
         }
-
         return response;
 
     }

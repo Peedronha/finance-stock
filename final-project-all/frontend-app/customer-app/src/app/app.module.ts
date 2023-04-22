@@ -1,42 +1,35 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { APP_INITIALIZER,NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule, HttpClientXsrfModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule, HttpClientXsrfModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
 
-function initializeKeycloak(keycloak: KeycloakService) {
-  return () => keycloak.init({
-    config: {
-      url: 'http://localhost:8180/',
-      realm: 'eazybankdev',
-      clientId: 'eazypublicclient',
-    },
-    initOptions: {
-      pkceMethod: 'S256',
-      redirectUri: 'http://localhost:4200/dashboard',
-    },loadUserProfileAtStartUp: false
-  });
-}
+import { XhrInterceptor } from './interceptors/app.request.interceptor';
+
+import { AppComponent } from './app.component';
+import { LoginComponent } from './components/login/login.component';
+import { LogoutComponent } from './components/logout/logout.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { HeaderComponent } from './components/header/header.component';
+import { HomeComponent } from './components/home/home.component';
+import { AuthActivateRouteGuard } from './routeguards/auth.routeguard';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    DashboardComponent,
     HeaderComponent,
     HomeComponent,
     LoginComponent,
-    DashboardComponent
+    LogoutComponent,
+    ContactComponent
   ],
   imports: [
-    BrowserModule,
-    FormsModule,
+
+  BrowserModule,
     AppRoutingModule,
-    KeycloadkAngularModule,
+    FormsModule,
     HttpClientModule,
     HttpClientXsrfModule.withOptions({
       cookieName: 'XSRF-TOKEN',
@@ -44,10 +37,12 @@ function initializeKeycloak(keycloak: KeycloakService) {
     })
   ],
   providers: [
-    provide: APP_INITIALIZER,
-    useFactory: initializeKeycloak,
-    multi: true,
-    deps: [ KeycloakService]
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: XhrInterceptor,
+      multi: true
+    },
+    AuthActivateRouteGuard
   ],
   bootstrap: [AppComponent]
 })

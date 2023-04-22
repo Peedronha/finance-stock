@@ -1,7 +1,5 @@
 create database db_customer;
 
-use db_customer;
-
 CREATE TABLE `customer` (
   `customer_id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
@@ -13,9 +11,6 @@ CREATE TABLE `customer` (
   PRIMARY KEY (`customer_id`)
 );
 
-INSERT INTO `customer` (`name`,`email`,`mobile_number`, `pwd`, `role`,`create_dt`)
- VALUES ('Happy','happy@example.com','9876548337', '$2y$12$oRRbkNfwuR8ug4MlzH5FOeui.//1mkd.RsOAJMbykTSupVy.x/vb2', 'admin',CURDATE());
-
 CREATE TABLE `authorities` (
   `id` int NOT NULL AUTO_INCREMENT,
   `customer_id` int NOT NULL,
@@ -25,19 +20,12 @@ CREATE TABLE `authorities` (
   CONSTRAINT `authorities_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`)
 );
 
-INSERT INTO `authorities` (`customer_id`, `name`)
- VALUES (1, 'VIEWACCOUNT');
+create database db_customer;
 
-INSERT INTO `authorities` (`customer_id`, `name`)
- VALUES (1, 'VIEWCARDS');
+use db_customer;
 
-INSERT INTO `authorities` (`customer_id`, `name`)
-  VALUES (1, 'VIEWLOANS');
-
-INSERT INTO `authorities` (`customer_id`, `name`)
-   VALUES (1, 'VIEWBALANCE');
-
-DELETE FROM `authorities`;
+INSERT INTO `customer` (`name`,`email`,`mobile_number`, `pwd`, `role`,`create_dt`)
+ VALUES ('Juliane Maran', 'julianemaran@gmail.com', '92373312', '$2y$12$oRRbkNfwuR8ug4MlzH5FOeui.//1mkd.RsOAJMbykTSupVy.x/vb2', 'admin', CURDATE());
 
 INSERT INTO `authorities` (`customer_id`, `name`)
   VALUES (1, 'ROLE_USER');

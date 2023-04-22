@@ -38,7 +38,7 @@ public class SecurityConfig {
                     config.setMaxAge(3600L);
                     return config;
                 }).and().csrf((csrf) -> csrf.csrfTokenRequestHandler(requestHandler)
-                        .ignoringRequestMatchers("/register")
+                        .ignoringRequestMatchers("/register", "/contact")
                         .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()))
                 .addFilterAfter(new CsrfCookieFilter(), BasicAuthenticationFilter.class)
                 .addFilterBefore(new RequestValidationBeforeFilter(), BasicAuthenticationFilter.class)
@@ -49,9 +49,9 @@ public class SecurityConfig {
                 .authorizeHttpRequests()
                 .requestMatchers("/swagger-ui*/**", "/swagger-ui/**", "/api-docs.yaml",
                         "/actuator/**").hasAnyRole("ADMIN")
-                .requestMatchers("/product", "/finance", "/dashboard").hasAnyRole("USER", "ADMIN")
+                .requestMatchers("/product", "/finance").hasAnyRole("USER", "ADMIN")
                 .requestMatchers("/user").authenticated()
-                .requestMatchers("/register").permitAll()
+                .requestMatchers("/register", "/contact").permitAll()
                 .and().formLogin()
                 .and().httpBasic();
 

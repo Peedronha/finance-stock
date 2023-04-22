@@ -31,8 +31,9 @@ public class CustomerAuthProvider implements AuthenticationProvider {
         String pwd = authentication.getCredentials().toString();
         List<Customer> customer = customerRepository.findByEmail(username);
         if (customer.size() > 0) {
-            if (passwordEncoder.matches(pwd, customer.get(0).getPassword())) {
-                return new UsernamePasswordAuthenticationToken(username, pwd, getGrantedAuthorities(customer.get(0).getAuthorities()));
+            if (passwordEncoder.matches(pwd, customer.get(0).getPwd())) {
+                return new UsernamePasswordAuthenticationToken(username, pwd,
+                        getGrantedAuthorities(customer.get(0).getAuthorities()));
             } else {
                 throw new BadCredentialsException("Invalid password!");
             }

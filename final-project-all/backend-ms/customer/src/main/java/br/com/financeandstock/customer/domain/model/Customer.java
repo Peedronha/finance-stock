@@ -20,26 +20,21 @@ import java.util.Set;
 public class Customer {
 
     @Id
-    @GenericGenerator(name = "native", strategy = "native")
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
-    private Long customerId;
+    @GenericGenerator(name = "native", strategy = "native")
+    private int customerId;
 
-    @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false, unique = true)
-    @Email(message = "{invalid.email}")
+    @Email
     private String email;
-
     private String mobileNumber;
 
-    @Column(nullable = false)
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private String password;
+    private String pwd;
 
     private String role;
-
-    private String registrationDate;
+    private String createDt;
 
     @JsonIgnore
     @OneToMany(mappedBy = "customer", fetch = FetchType.EAGER)
