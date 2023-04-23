@@ -15,12 +15,13 @@ import java.util.Set;
 @Getter
 @Setter
 @Entity
-public class Customer {
+@Table(name = "users")
+public class UserModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
-    private Long customerId;
+    private Long userId;
     private String name;
 
     @Email
@@ -37,7 +38,7 @@ public class Customer {
     private LocalDate registrationDate = LocalDate.now();
 
     @JsonIgnore
-    @OneToMany(mappedBy = "customer", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "users", fetch = FetchType.EAGER)
     private Set<Authority> authorities;
 
 }

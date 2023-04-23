@@ -39,21 +39,19 @@ public class SecurityConfig {
                     config.setMaxAge(3600L);
                     return config;
                 }).and().csrf((csrf) -> csrf.csrfTokenRequestHandler(requestHandler)
-                        .ignoringRequestMatchers("/finance-and-stock/v1/**", "/user", "/register",
-                                "/swagger-ui.html", "/api-docs", "/actuator/**")
+                        .ignoringRequestMatchers("/register", "/swagger-ui.html", "/actuator/**")
                         .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()))
                 .addFilterAfter(new CsrfCookieFilter(), BasicAuthenticationFilter.class)
                 .addFilterBefore(new RequestValidationBeforeFilter(), BasicAuthenticationFilter.class)
                 .addFilterAt(new AuthoritiesLoggingAtFilter(), BasicAuthenticationFilter.class)
                 .addFilterAfter(new AuthoritiesLoggingAfterFilter(), BasicAuthenticationFilter.class)
                 .authorizeHttpRequests()
-//                .requestMatchers("/myAccount").hasRole("USER")
+                .requestMatchers("/list-user").hasRole("ADMIN")
 //                .requestMatchers("/myBalance").hasAnyRole("USER","ADMIN")
 //                .requestMatchers("/myLoans").hasRole("USER")
 //                .requestMatchers("/myCards").hasRole("USER")
                 .requestMatchers("/user").authenticated()
-                .requestMatchers("/finance-and-stock/v1/**", "/register",
-                        "/swagger-ui.html", "/api-docs", "/actuator/**").permitAll()
+                .requestMatchers("/register", "/swagger-ui.html", "/actuator/**").permitAll()
                 .and().formLogin()
                 .and().httpBasic();
 
