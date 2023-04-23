@@ -1,7 +1,7 @@
 package br.com.finalproject.financeandstock.framework.security.config;
 
 import br.com.finalproject.financeandstock.domain.model.Authority;
-import br.com.finalproject.financeandstock.domain.model.Customer;
+import br.com.finalproject.financeandstock.domain.model.UserModel;
 import br.com.finalproject.financeandstock.framework.adapter.out.CustomerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -29,11 +29,11 @@ public class AuthProvider implements AuthenticationProvider {
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         String username = authentication.getName();
         String pwd = authentication.getCredentials().toString();
-        List<Customer> customer = customerRepository.findByEmail(username);
-        if (!customer.isEmpty()) {
-            if (passwordEncoder.matches(pwd, customer.get(0).getPassword())) {
+        List<UserModel> userModel = customerRepository.findByEmail(username);
+        if (!userModel.isEmpty()) {
+            if (passwordEncoder.matches(pwd, userModel.get(0).getPassword())) {
                 return new UsernamePasswordAuthenticationToken(username, pwd,
-                        getGrantedAuthorities(customer.get(0).getAuthorities()));
+                        getGrantedAuthorities(userModel.get(0).getAuthorities()));
             } else {
                 throw new BadCredentialsException("Invalid password!");
             }
@@ -45,7 +45,7 @@ public class AuthProvider implements AuthenticationProvider {
     private List<GrantedAuthority> getGrantedAuthorities(Set<Authority> authorities) {
         var grantedAuthorities = new ArrayList<GrantedAuthority>();
         for (Authority authority : authorities) {
-            grantedAuthorities.add(new SimpleGrantedAuthority(authority.getUsername()));
+            grantedAuthorities.add(new SimpleGrantedAuthority(authority.getName()));
         }
         return grantedAuthorities;
     }

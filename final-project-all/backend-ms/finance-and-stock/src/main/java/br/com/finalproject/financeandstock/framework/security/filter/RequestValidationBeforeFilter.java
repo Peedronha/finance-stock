@@ -3,6 +3,7 @@ package br.com.finalproject.financeandstock.framework.security.filter;
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.util.StringUtils;
 
@@ -13,10 +14,11 @@ import java.util.Base64;
 
 import static org.springframework.http.HttpHeaders.AUTHORIZATION;
 
+@RequiredArgsConstructor
 public class RequestValidationBeforeFilter implements Filter {
 
     public static final String AUTHENTICATION_SCHEME_BASIC = "Basic";
-    private Charset credentialsCharset = StandardCharsets.UTF_8;
+    private final Charset credentialsCharset = StandardCharsets.UTF_8;
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain)
             throws IOException, ServletException {
