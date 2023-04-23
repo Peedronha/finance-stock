@@ -8,7 +8,7 @@
 4 - Report  
 5 - Tratamento de Erros  
 6 - Descrição dos serviços via Swagger  
-7 - Autenteicação via JWT  
+7 - Autenticação via JWT  
 8 - Separação das funcionalidades via Microsserviços  
 9 - Comunicação entre MS via Feign ou outro  
 10 - Rotina de deploy (nuvem AWS)  
