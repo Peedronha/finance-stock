@@ -3,10 +3,10 @@ POST http://localhost:8081/register HTTP/1.1
 Content-Type: application/json
 
 {
-  "name": "Juliane Maran",
-  "email": "julianemaran@gmail.com",
-  "mobileNumber": "998199488",
-  "documentNumber": "06069043952",
+  "name": "Eduarda",
+  "email": "eduarda.grein01@gmail.com",
+  "mobileNumber": "996183553",
+  "documentNumber": "12559893940",
   "password": "123456",
   "role": "admin"
 }

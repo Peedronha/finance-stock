@@ -16,13 +16,9 @@ export class LoginComponent implements OnInit {
   authStatus: string = "";
   model = new User();
 
-  constructor(private loginService: LoginService, private router: Router) {
+  constructor(private loginService: LoginService, private router: Router) { }
 
-   }
-
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void { }
 
   validateUser(loginForm: NgForm) {
     this.loginService.validateLoginDetails(this.model).subscribe(
