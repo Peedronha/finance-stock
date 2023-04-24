@@ -1,0 +1,10 @@
+openapi: 3.0.3
+info:
+  title: Stock Management
+  description: |- 
+    Gestão de Estoque
+  version: 1.0.0
+servers:
+  - url: 'http://localhost:8088/api'
+paths:
+  
