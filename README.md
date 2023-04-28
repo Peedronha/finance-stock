@@ -1,60 +1,36 @@
-# FINAL PROJECT    
+<h1 align="center">Pontifícia Universidade Católica do Paraná</h1>  
+<p align="center">PUC/PR - Grupo Marista</p>
+<h3 align="center">Bacharelado em Sistemas de Informação</h3> 
 
-## Backend    
+---
 
-1 - API REST with SpringBoot   
-2 - CRUDs  
-3 - Rotina especial   
-4 - Report  
-5 - Tratamento de Erros  
-6 - Descrição dos serviços via Swagger  
-7 - Autenticação via JWT  
-8 - Separação das funcionalidades via Microsserviços  
-9 - Comunicação entre MS via Feign ou outro  
-10 - Rotina de deploy (nuvem AWS)  
-11 - Mensageria: Kafka ou RabbitMQ  
+<p>Trabalho apresentado como requisito parcial para a Disciplina de <b>Projeto Final I: Especificiação e Design</b>, do curso de Bacharelado em Sistemas de Informação, da PUC/PR.</p>
 
-### Database  
+<ul>
+    <li>
+        <b>Acadêmica:</b> Juliane Valiati Maran
+    </li>
+    <li>
+        <b>Tema:</b> Finance & Stock
+    </li>    
+    <li>
+        <b>Professoras Orientadoras:</b>
+        <ul>Joselaine Valaski</ul>
+        <ul>Cristina Verçosa P. B. de Souza</ul>
+    </li>
+</ul>
 
-1 - NoSQL  
-2 - SQL   
+<hr>
 
-## Frontend  
+<ul>
+	<li><a href="https://github.com/fiances-e-stock/project-finance-stock/tree/master/diagrams">Diagrams</a></li>  
+	<li><a href="https://github.com/fiances-e-stock/project-finance-stock/tree/master/documents">Documents</a></li>   
+	<li><a href="https://github.com/fiances-e-stock/project-finance-stock/tree/master/evidencias">Evidence</a></li>  
+    <li><a href="https://github.com/fiances-e-stock/project-finance-stock/tree/master/finance-and-stock-app">finance-and-stock-app | frontend</a></li>  
+    <li><a href="https://github.com/fiances-e-stock/project-finance-stock/tree/master/finance-and-stock"> finance-and-stock | backend</a></li>   
+</ul>
 
-## AWS  
+<hr>
 
-### Database  
-
-database: db-final-project 
-username: admin 
-password: finalproject
-
-Endpoint: db-final-project.c6rfbhv0hao6.sa-east-1.rds.amazonaws.com
-Porta: 3306
-Zona de disponibilidade: sa-east-1a
-Tamanho: db.t3.micro
-
-------------------------------------------------------------------------------------------  
-
-1 - Class Authority  
-Long id
-String name
-Customer customer
-
-2 - Class Customer  
-
->>> Backend						>>> Frontend
-Long id 						id: number
-String name  					name: string
-String documentNumber  			documentNumber: string 
-String mobileNumber  			mobileNumber: string 
-String email 					email: string 
-String password 				password: string  
-								role: string 
-LocalDate registrationDate		statusCd: string   
-Set<Authority> authorities  	authStatus: string 
-
-
---------------------------------------------------------------------------------------------
-
-
+<p align="center"><b>Curitiba/PR<b></p> 
+<p align="center">2023</p> 
