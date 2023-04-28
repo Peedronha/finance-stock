@@ -9,7 +9,7 @@ import { LoginService } from '../../services/login/login.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css', '../../../styles.css']
 })
 export class LoginComponent implements OnInit {
 
@@ -21,8 +21,11 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void { }
 
   validateUser(loginForm: NgForm) {
+
     this.loginService.validateLoginDetails(this.model).subscribe(
+
       responseData => {
+
         window.sessionStorage.setItem("Authorization",responseData.headers.get('Authorization')!);
         this.model = <any> responseData.body;
         this.model.authStatus = 'AUTH';
@@ -30,6 +33,7 @@ export class LoginComponent implements OnInit {
         let xsrf = getCookie('XSRF-TOKEN')!;
         window.sessionStorage.setItem("XSRF-TOKEN",xsrf);
         this.router.navigate(['dashboard']);
+
       });
 
   }

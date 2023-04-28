@@ -4,15 +4,13 @@ import { User } from 'src/app/model/user.model';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css', '../../../styles.css']
 })
 export class DashboardComponent implements OnInit {
 
   user = new User();
 
-  constructor() {
-
-  }
+  constructor() { }
 
   ngOnInit(): void {
     if(sessionStorage.getItem('userdetails')) {

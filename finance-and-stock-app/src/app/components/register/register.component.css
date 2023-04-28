@@ -1,6 +1,15 @@
 @import "../../../assets/css/font-awesome.css";
 @import "../../../assets/css/bootstrap.css";
 
+* {
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.text-error {
+  color: white;
+  text-decoration: underline;
+}
+
 .logo-box {
   width:50%;
   height:100vh;
@@ -16,7 +25,7 @@
 
 .box {
   width:50%;
-  height:100vh;
+  height:fit-content;
   background-color:#E10103;
   float:left;
 }
@@ -435,7 +444,7 @@ h4 {
 .p-t-137 {padding-top: 137px;}
 .p-t-138 {padding-top: 138px;}
 .p-t-139 {padding-top: 139px;}
-.p-t-140 {padding-top: 140px;}
+.p-t-140 {padding-top: 100px;}
 .p-t-141 {padding-top: 141px;}
 .p-t-142 {padding-top: 142px;}
 .p-t-143 {padding-top: 143px;}
@@ -3082,12 +3091,10 @@ h4 {
 
 body, html {
 	height: 100%;
-	font-family: Poppins-Bold, sans-serif;
 }
 
 /*---------------------------------------------*/
 a {
-  font-family: Poppins-Bold;
 	font-size: 14px;
 	line-height: 1.7;
 	color: #666666;
@@ -3113,7 +3120,6 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 p {
-	font-family: Poppins-Bold;
 	font-size: 14px;
 	line-height: 1.7;
 	color: #666666;
@@ -3181,21 +3187,18 @@ iframe {
 /*//////////////////////////////////////////////////////////////////
 [ Utility ]*/
 .txt1 {
-  font-family: Poppins-Bold;
   font-size: 15px;
   color: #999999;
   line-height: 1.4;
 }
 
 .txt2 {
-  font-family: Poppins-Bold;
   font-size: 15px;
   color: #57b846;
   line-height: 1.4;
 }
 
 .txt3 {
-  font-family: Georgia, serif;
   font-size: 15px;
   color: #57b846;
   line-height: 1.4;
@@ -3248,7 +3251,6 @@ iframe {
 }
 
 .login100-form-title {
-  font-family: Georgia, serif;
   font-size: 30px;
   color: #fff;
   line-height: 1.2;
@@ -3275,7 +3277,6 @@ iframe {
 }
 
 .input100 {
-  font-family: Georgia, serif;
   font-size: 15px;
   color: #1b3815;
   line-height: 1.2;
@@ -3292,6 +3293,7 @@ iframe {
 /*------------------------------------------------------------------
 [ Focus Input ]*/
 
+/*
 .focus-input100 {
   display: block;
   position: absolute;
@@ -3314,6 +3316,7 @@ iframe {
   -moz-transition: all 0.4s;
   transition: all 0.4s;
 }
+*/
 
 .input100:focus + .focus-input100 {
   width: calc(100% + 20px);
@@ -3346,7 +3349,6 @@ iframe {
   background-color: #57b846;
   border-radius: 25px;
 
-  font-family: Georgia, serif;
   font-size: 15px;
   color: #fff;
   line-height: 1.2;
@@ -3388,7 +3390,6 @@ iframe {
   right: 10px;
   pointer-events: none;
 
-  font-family: Georgia, serif;
   color: #c80000;
   font-size: 13px;
   line-height: 1.4;
@@ -3405,7 +3406,6 @@ iframe {
 
 .alert-validate::after {
   content: "\f06a";
-  font-family: FontAwesome;
   display: block;
   position: absolute;
   z-index: 1100;
@@ -3454,7 +3454,6 @@ body {
     font-size: 100%;
     background: #fff;
     scroll-behavior: smooth;
-    font-family: 'Catamaran', sans-serif;
 }
 
 body a {
@@ -3481,7 +3480,6 @@ input[type="search"] {
     -moz-transition: 0.5s all;
     -o-transition: 0.5s all;
     -ms-transition: 0.5s all;
-    font-family: 'Catamaran', sans-serif;
 
 }
 
@@ -3494,7 +3492,7 @@ h6 {
     margin: 0;
     letter-spacing: 1px;
     font-weight: 600;
-    font-family: 'Catamaran', sans-serif;
+
 }
 
 p {
@@ -4209,4 +4207,3 @@ p.test span {
     padding: 1em 1em;
     box-shadow: none;
 }
-

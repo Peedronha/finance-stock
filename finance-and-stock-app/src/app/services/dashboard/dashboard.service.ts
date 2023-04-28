@@ -25,6 +25,13 @@ export class DashboardService {
     })
   }
 
+  // STOCK
+  getListUser() {
+    return this.http.get(environment.rootUrl + AppConstants.LIST_USER_API_URL, {
+      observe: 'response', withCredentials: true
+    })
+  }
+
   // SETTINGS
   getSettings() {
     return this.http.get(environment.rootUrl + AppConstants.SETTINGS_API_URL, {

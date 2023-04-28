@@ -1,6 +1,18 @@
 @import "../../../assets/css/font-awesome.css";
 @import "../../../assets/css/bootstrap.css";
 
+html{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #666666;
+}
+
+.home-subtitle{
+  font-family: inherit;
+  font-size: 1.2rem;
+}
+
+
+
 /*[ FONT SIZE ]
 ///////////////////////////////////////////////////////////
 */
@@ -3026,7 +3038,6 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 p {
-	font-family: Poppins-Bold;
 	font-size: 14px;
 	line-height: 1.7;
 	color: #666666;
@@ -3412,7 +3423,6 @@ h6 {
 
 p {
     font-size: 0.9em;
-    color: #777;
     line-height: 1.9em;
     letter-spacing: 1px;
 }
@@ -3471,9 +3481,6 @@ ul {
     opacity: 0.9;
 }
 
-.book-appo {
-    background: #f54785;
-}
 
 .banner-w3ls-inner p {
     color: #fff;
@@ -3487,7 +3494,7 @@ ul {
 
 
 /* header */
-/* CSS Document */
+/*x' CSS Document */
 .w3pvt-bg {
     background: #fff;
     padding: 1.5em;
@@ -3924,6 +3931,7 @@ h3.title-w3ls,
 h3.title-w3ls.two {
     font-size: 3em;
     color: #444;
+    font-family: inherit;
 }
 
 h3.title-w3ls.two {
@@ -4122,4 +4130,3 @@ p.test span {
     padding: 1em 1em;
     box-shadow: none;
 }
-
