@@ -1,4 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+  --primary-color: #b9b4d9;
+  --secundary-color: #fff;
+}
+[data-theme="dark"]{
+  --primary-color: #b9b4d9;
+  --secundary-color: #0a0b0d;
+}
+[data-theme="blue"]{
+  --primary-color: #3621c7;
+  --secundary-color: #0a0b0d;
+}
 body {
   background:rgb(235, 234, 233);;
   background-size: cover;

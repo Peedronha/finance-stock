@@ -7,6 +7,7 @@ export const  AppConstants = {
   REGISTER_API_URL : "/register",
   CUSTOMER_API_URL : "/customer",
   FINANCE_API_URL : "/finance",
+  PRODUCT_API_URL : "/product",
   STOCK_API_URL : "/stock",
   SETTINGS_API_URL : "/settgins"
 

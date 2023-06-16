@@ -14,18 +14,20 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ForgotComponent } from './components/forgot/forgot.component';
+import {ThemeComponent} from "./components/theme/theme.component";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    LoginComponent,
-    DashboardComponent,
-    LogoutComponent,
-    HomeComponent,
-    RegisterComponent,
-    ForgotComponent
-  ],
+    declarations: [
+        AppComponent,
+        HeaderComponent,
+        LoginComponent,
+        DashboardComponent,
+        LogoutComponent,
+        HomeComponent,
+        RegisterComponent,
+        ForgotComponent,
+        ThemeComponent
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
