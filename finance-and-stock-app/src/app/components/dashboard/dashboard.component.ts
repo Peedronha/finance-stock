@@ -12,11 +12,31 @@ import {getCookie} from "typescript-cookie";
 })
 export class DashboardComponent implements OnInit {
   searchText = "";
-  listOfProducts: any = [] ;
-
+  listOfProducts: Product[] | any = [];
+  products: Product[] | any = this.listOfProducts;
   user = new User();
 
   ngOnInit(): void {
+
+    this.listOfProducts.push(new Product({
+      description: "Product 2",
+      number: 67890,
+      price: 19.99,
+      quantityInStock: 50,
+      packingVolume: "20x20x20",
+      registrationDate: new Date(),
+      productId: 2
+    }));
+
+    this.listOfProducts.push(new Product({
+      description: "Product 1",
+      number: 67890,
+      price: 19.99,
+      quantityInStock: 50,
+      packingVolume: "20x20x20",
+      registrationDate: new Date(),
+      productId: 1
+    }));
     if(sessionStorage.getItem('userdetails')) {
       this.user = JSON.parse(sessionStorage.getItem('userdetails') || "");
     }
@@ -24,25 +44,22 @@ export class DashboardComponent implements OnInit {
   }
   constructor(private dashboardService: DashboardService, private router: Router){ }
   Search(){
-    // alert(this.searchText)
-    if(this.searchText!== ""){
-      let searchValue = this.searchText.toLocaleLowerCase();
-
-      this.listOfProducts = this.listOfProducts.filter((contact:any) =>{
-        return contact.name.toLocaleLowerCase().match(searchValue )
-          ;
-        // you can keep on adding object properties here
-
+    if (this.searchText !== "") {
+      const searchValue = this.searchText.toLowerCase();
+      this.listOfProducts = this.listOfProducts.filter((product: Product) => {
+        return (
+          product.description.toLowerCase().includes(searchValue) ||
+          product.number.toString().includes(searchValue) ||
+          product.packingVolume.toLowerCase().includes(searchValue)
+        );
       });
-
-      //console.log(this.listOfProducts);
     }
     else {
-      this.dashboardService.getStock().subscribe(responseData => {
-        // window.sessionStorage.getItem("Authorization");
-        this.listOfProducts = <Product> responseData.body;
-      });
+      this.listOfProducts = this.products;
+      // this.dashboardService.getStock().subscribe(responseData => {
+      //   // window.sessionStorage.getItem("Authorization");
+      //   this.listOfProducts = responseData.body as Product[];
+      // });
     }
   }
-
 }

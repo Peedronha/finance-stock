@@ -14,7 +14,12 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ForgotComponent } from './components/forgot/forgot.component';
-import {ThemeComponent} from "./components/theme/theme.component";
+import { ThemeComponent} from "./components/theme/theme.component";
+import { NewPasswordComponent } from './components/new-password/new-password.component';
+import { TokenComponent } from './components/token/token.component';
+import { StockComponent } from './components/stock/stock.component';
+import { DetailsComponent } from './components/details/details.component';
+import { AddProductComponent } from './components/dashboard/add-product/add-product.component';
 
 @NgModule({
     declarations: [
@@ -26,7 +31,12 @@ import {ThemeComponent} from "./components/theme/theme.component";
         HomeComponent,
         RegisterComponent,
         ForgotComponent,
-        ThemeComponent
+        ThemeComponent,
+        NewPasswordComponent,
+        TokenComponent,
+        StockComponent,
+        DetailsComponent,
+        AddProductComponent
     ],
   imports: [
     BrowserModule,

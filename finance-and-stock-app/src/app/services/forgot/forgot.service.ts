@@ -17,4 +17,6 @@ export class ForgotService {
       withCredentials: true
     });
   }
+  validateToken(){}
+
 }
