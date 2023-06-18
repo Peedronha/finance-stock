@@ -1,18 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
 :root{
-  --primary-color: #b9b4d9;
-  --secundary-color: #fff;
+  --primary-color: #c9cdd0;
+  --secundary-color: #b9b4d9;
+  --util-color: #fff;
+  --bs-body-bg: var(--primary-color) !important;
 }
 [data-theme="dark"]{
-  --primary-color: #b9b4d9;
-  --secundary-color: #0a0b0d;
+  --primary-color: #3d4350;
+  --secundary-color: #8880be;
+  --util-color: #6c757d;
 }
 [data-theme="blue"]{
   --primary-color: #3621c7;
   --secundary-color: #0a0b0d;
+  --util-color: #6c757d;
 }
 body {
-  background:rgb(235, 234, 233);;
+  background-color:var(--primary-color);
+  transition: background 2s;
+  /*background:rgb(235, 234, 233);;*/
   background-size: cover;
   text-align: center;
   font-family: Georgia, serif;
@@ -21,6 +27,9 @@ body {
 .container{
   margin: auto;
 	width: 70%;
+}
+.wrapper, .card, .box,.logo-box, .form-control, .table{
+  transition: background 2s;
 }
 
 /*-- Profile-form --*/
@@ -113,4 +122,9 @@ font-family: Georgia, serif;
 .thead-light{
   background-color: #57b846;
   color: #ff0000;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td,
+.table-striped>tbody>tr:nth-child(odd)>th {
+  background-color: var(--primary-color);
 }

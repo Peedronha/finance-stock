@@ -37,6 +37,15 @@ export class DashboardComponent implements OnInit {
       registrationDate: new Date(),
       productId: 1
     }));
+    this.listOfProducts.push(new Product({
+      description: "Product 3",
+      number: 67890,
+      price: 19.99,
+      quantityInStock: 50,
+      packingVolume: "20x20x20",
+      registrationDate: new Date(),
+      productId: 1
+    }));
     if(sessionStorage.getItem('userdetails')) {
       this.user = JSON.parse(sessionStorage.getItem('userdetails') || "");
     }
@@ -63,3 +72,39 @@ export class DashboardComponent implements OnInit {
     }
   }
 }
+/*
+* <app-header></app-header>
+<div class="container-fluid,
+container-sm
+container-md
+container-lg
+container-xl">
+  <h2 class="main-content text-center">
+    <p>DASHBOARD</p>
+  </h2>
+  <div class="container text-center mt-4">
+    <input class="form-control mt-2 mb-2" type="text" [(ngModel)]="searchText" (input)="Search()"
+           placeholder="Search by name"/>
+    <table class="table table-striped table-bordered table-sm row-border hover" id="datatableexample">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Balance</th>
+      </tr>
+      </thead>
+      <tbody>
+
+      <tr *ngFor="let group of listOfProducts">
+        <td>{{group.productId}}</td>
+        <td>{{group.description}}</td>
+        <td>{{group.quantityInStock}}</td>
+        <td>{{group.number}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+* */

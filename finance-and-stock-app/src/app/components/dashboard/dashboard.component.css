@@ -1,7 +1,33 @@
 @import "../../../assets/css/font-awesome.css";
+@import "../../../assets/css/bootstrap.css";
 
 .sticky-header .main-content {
   padding-top: 40px;
+}
+.form-control{
+  border: none;
+  background-color:var(--util-color) !important;
+}
+
+.form-control:focus{
+  background-color: #FFFFFFFF!important;
+  box-shadow-: inset 0 0 5px 0 rgba(0, 0, 0, 1);
+  }
+.form-control::placeholder:active{
+  color: var(--primary-color) ;
+}
+
+.form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--primary-color) ;
+  opacity: 1;
+}
+
+.form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: var(--primary-color) ;
+}
+
+.form-control::-ms-input-placeholder { /* Microsoft Edge */
+  color: var(--primary-color) ;
 }
 
 .container-fluid,
@@ -27,7 +53,8 @@
   padding: 0.75rem 1rem;
   margin-bottom: 1rem;
   list-style: none;
-  background-color: #e9ecef;
+  background-color: var(--primary-color);
+  /*background-color: #e9ecef;*/
   border-radius: 0.25rem;
 }
 
@@ -134,7 +161,7 @@
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #fff;
+  background-color: var(--util-color);
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
@@ -267,7 +294,7 @@ h3.number {
   font-size: 28px;
   line-height: 36px;
   text-align: right;
-  color: var(--primary-color);
+  color: var(--secundary-color);
   transition: .3s ease;
   margin-bottom: 0;
 }
@@ -276,4 +303,48 @@ p.stat-text {
   font-size: 14px;
   text-align: right;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
 
+/* Styles for larger screens */
+.container-fluid,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #0a0b0d;
+  text-decoration: none; }
+
+/* Styles for medium-sized screens */
+@media (max-width: 992px) {
+  .grid-item {
+    width: calc(50% - 10px);
+  }
+}
+
+/* Styles for small screens */
+@media (max-width: 768px) {
+  .grid-item {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}

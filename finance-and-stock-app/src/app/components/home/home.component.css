@@ -3855,7 +3855,7 @@ li.icons a {
     border-radius: 50%;
     line-height: 33px;
     padding: 0;
-    background: transporant;
+    background: tranparent;
     color: #fff;
 }
 
@@ -3930,7 +3930,7 @@ span.border-line {
 h3.title-w3ls,
 h3.title-w3ls.two {
     font-size: 3em;
-    color: #444;
+    color: var(--secundary-color);
     font-family: inherit;
 }
 
