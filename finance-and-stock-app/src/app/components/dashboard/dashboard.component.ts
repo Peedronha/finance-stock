@@ -11,10 +11,13 @@ import {getCookie} from "typescript-cookie";
   styleUrls: ['./dashboard.component.css', '../../../styles.css']
 })
 export class DashboardComponent implements OnInit {
+  public page = 1;
+  public pageSize = 10;
   searchText = "";
-  listOfProducts: Product[] | any = [];
+  public listOfProducts: Array<Product> = [];
   products: Product[] | any = this.listOfProducts;
   user = new User();
+
 
   ngOnInit(): void {
 
@@ -46,13 +49,16 @@ export class DashboardComponent implements OnInit {
       registrationDate: new Date(),
       productId: 1
     }));
-    if(sessionStorage.getItem('userdetails')) {
+    if (sessionStorage.getItem('userdetails')) {
       this.user = JSON.parse(sessionStorage.getItem('userdetails') || "");
     }
     this.Search();
   }
-  constructor(private dashboardService: DashboardService, private router: Router){ }
-  Search(){
+
+  constructor(private dashboardService: DashboardService, private router: Router) {
+  }
+
+  Search() {
     if (this.searchText !== "") {
       const searchValue = this.searchText.toLowerCase();
       this.listOfProducts = this.listOfProducts.filter((product: Product) => {
@@ -62,8 +68,7 @@ export class DashboardComponent implements OnInit {
           product.packingVolume.toLowerCase().includes(searchValue)
         );
       });
-    }
-    else {
+    } else {
       this.listOfProducts = this.products;
       // this.dashboardService.getStock().subscribe(responseData => {
       //   // window.sessionStorage.getItem("Authorization");
@@ -71,40 +76,27 @@ export class DashboardComponent implements OnInit {
       // });
     }
   }
+
+  editItem(product: Product) {
+    // // this.router.navigateByUrl(`EditUser/${Product.id}`);
+    //
+    // const ref = this.dashboardService.open(EditUserComponent, { centered: true });
+    // ref.componentInstance.selectedUser = Product;
+    //
+    // ref.result.then((yes) => {
+    //     console.log("Yes Click");
+    //
+    //     this.setUsersList();
+    //   },
+    //   (cancel) => {
+    //     console.log("Cancel Click");
+    //
+    //   })
+  }
+
+  deleteItem(product: Product) {
+    // console.log(Product);
+    //
+    // this.dashboardService.deleteUserById(Product.id).subscribe(x => this.setUsersList());
+  }
 }
-/*
-* <app-header></app-header>
-<div class="container-fluid,
-container-sm
-container-md
-container-lg
-container-xl">
-  <h2 class="main-content text-center">
-    <p>DASHBOARD</p>
-  </h2>
-  <div class="container text-center mt-4">
-    <input class="form-control mt-2 mb-2" type="text" [(ngModel)]="searchText" (input)="Search()"
-           placeholder="Search by name"/>
-    <table class="table table-striped table-bordered table-sm row-border hover" id="datatableexample">
-      <thead>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Quantity</th>
-        <th>Balance</th>
-      </tr>
-      </thead>
-      <tbody>
-
-      <tr *ngFor="let group of listOfProducts">
-        <td>{{group.productId}}</td>
-        <td>{{group.description}}</td>
-        <td>{{group.quantityInStock}}</td>
-        <td>{{group.number}}</td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-
-* */

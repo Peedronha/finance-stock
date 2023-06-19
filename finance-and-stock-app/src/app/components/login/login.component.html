@@ -1,5 +1,5 @@
 <div class="logo-box">
-<!--  <img src="../../../assets/images/logo_sem_fundo.png" alt="Finance & Stock">-->
+  <!--  <img src="../../../assets/images/logo_sem_fundo.png" alt="Finance & Stock">-->
 </div>
 <div class="box">
   <div id="box-form-subs">
@@ -9,24 +9,28 @@
       </div>
       <div id="box-form-inputs">
         <form (ngSubmit)="loginForm.valid && validateUser(loginForm)"
-          class="login100-form validate-form p-l-55 p-r-55 p-t-140" #loginForm="ngForm">
+              class="login100-form validate-form p-l-55 p-r-55 p-t-140" #loginForm="ngForm">
           <div class="form-group">
             <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter email">
               <input class="input100" type="email" name="email" id="email" placeholder="Email" required
-              pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-              [(ngModel)]="model.email" #email="ngModel">
+                     pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                     [(ngModel)]="model.email" #email="ngModel">
               <span class="focus-input100"></span>
             </div>
-            <span class="text-error" *ngIf="(email.touched || loginForm.submitted) &&
-            email.errors?.['required']">Error: Email is required!</span>
+            <span class="text-error" *ngIf="(email.touched || loginForm.submitted) &&email.errors?.['required']">
+              Error: Email is required!
+            </span>
             <span class="text-error" *ngIf="(email.touched || loginForm.submitted) &&
             email.errors?.['pattern']">Error: Please provide a valid email address!</span>
           </div>
+
           <div class="form-group">
             <div class="wrap-input100 validate-input" data-validate="Please enter password">
               <input class="input100" type="password" name="password" placeholder="Password" id="password" required
-              [(ngModel)]="model.password" #password="ngModel" minlength="6">
-              <span class="focus-input100"></span>
+                     [(ngModel)]="model.password" #password="ngModel" minlength="6">
+              <span class="focus-input100">
+
+              </span>
             </div>
             <span class="text-error" *ngIf="(password.touched || loginForm.submitted) &&
             password.errors?.['required']">Error: Password is required!</span>

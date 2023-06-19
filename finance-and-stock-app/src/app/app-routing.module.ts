@@ -10,6 +10,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { AuthGuard } from './routeguards/auth.guard';
 import {TokenComponent} from "./components/token/token.component";
 import {NewPasswordComponent} from "./components/new-password/new-password.component";
+import {ContactComponent} from "./components/contact/contact.component";
+import {SobreComponent} from "./components/about/sobre.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -19,6 +21,8 @@ const routes: Routes = [
   { path: 'list-user', component: RegisterComponent},
   { path: 'logout', component: LogoutComponent},
   { path: 'forgot', component: ForgotComponent},
+  { path: 'contact', component: ContactComponent},
+  { path: 'about', component: SobreComponent},
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard], data: {
     roles: ['USER', 'ADMIN']
   }},
