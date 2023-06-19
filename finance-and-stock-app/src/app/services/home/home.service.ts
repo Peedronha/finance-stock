@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import {Customer} from "../../model/customer.model";
 import {environment} from "../../../environments/environment.development";
 import {AppConstants} from "../../constants/app.constants";
+import {Product} from "../../model/product.model";
 
 @Injectable({
   providedIn: 'root'
@@ -24,4 +25,7 @@ export class HomeService {
 
   // REGISTER
 
+  updateProduct(product:Product) {
+
+  }
 }
