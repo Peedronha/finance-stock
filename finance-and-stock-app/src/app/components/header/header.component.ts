@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { User } from 'src/app/model/user.model';
 
 @Component({
@@ -8,6 +8,8 @@ import { User } from 'src/app/model/user.model';
 })
 export class HeaderComponent implements OnInit {
 
+  @Input() deviceXS: boolean | any;
+
   user = new User();
 
   selectedTheme: string | undefined;
@@ -15,6 +17,7 @@ export class HeaderComponent implements OnInit {
     this.selectedTheme = localStorage.getItem('selectedTheme') || 'light';
     document.documentElement.setAttribute('data-theme', this.selectedTheme);
   }
+
   toggleTheme(isOtherTheme: boolean): void {
     this.selectedTheme = isOtherTheme ? 'dark' : 'light';
     document.documentElement.setAttribute('data-theme', this.selectedTheme);

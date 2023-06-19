@@ -32,6 +32,10 @@ body {
   transition: background 2s;
 }
 
+.hide {
+  display: none !important;
+}
+
 /*-- Profile-form --*/
 .top-grids {
   background: linear-gradient(45deg, #56ab2f, #a8e063);
