@@ -10,11 +10,12 @@ export class Customer{
   public statusMsg : string;
   public authStatus : string;
   public cpf: string;
+  public company: string;
 
 
-  constructor({ id, name, mobileNumber, email, password, role, statusCd, statusMsg, authStatus, cpf}:
+  constructor({ id, name, mobileNumber, email, password, role, statusCd, statusMsg, authStatus, cpf, company}:
     { id?: number; name?: string; mobileNumber?: string; email?: string; password?: string;
-      role?: string; statusCd?: string; statusMsg?: string; authStatus?: string; cpf?:string} = {}) {
+      role?: string; statusCd?: string; statusMsg?: string; authStatus?: string; cpf?:string, company?:string} = {}) {
         this.id = id || 0;
         this.name = name || '';
         this.mobileNumber = mobileNumber || '';
@@ -25,6 +26,7 @@ export class Customer{
         this.statusMsg = statusMsg || '';
         this.authStatus = authStatus || '';
         this.cpf = cpf || '';
+        this.company = cpf || '';
   }
 
 }
