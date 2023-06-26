@@ -70,16 +70,14 @@
                 <th>ID</th>
                 <th>Name</th>
                 <th>Quantity</th>
-                <th>Balance</th>
                 <th>Action</th>
               </tr>
               </thead>
               <tbody>
-              <tr *ngFor="let group of listOfProducts">
+              <tr *ngFor="let group of listOfProducts | paginate: {itemsPerPage: 5, currentPage: pageStock};">
                 <td>{{group.productId}}</td>
                 <td>{{group.description}}</td>
                 <td>{{group.quantityInStock}}</td>
-                <td>{{group.number}}</td>
                 <td>
                   <button class="btn btn-primary m-2" (click)="openPopupEdit(group.productId,'product')">Edit</button>
                   <button class="btn btn-danger" (click)="deleteItem(group)">Delete</button>
@@ -87,6 +85,7 @@
               </tr>
               </tbody>
             </table>
+            <pagination-controls class="" (pageChange)="pageStock = $event"></pagination-controls>
           </div>
         </div>
       </div>
@@ -98,31 +97,25 @@
           <h3 class="number text-left">75</h3>
           <p class="stat-text text-left"><a href="#" target="_blank">Finanças</a></p>
           <div class="text-center mt-4">
-            <input class="form-control mt-2 mb-2" type="text" [(ngModel)]="searchText" (input)="Search()"
+            <input class="form-control mt-2 mb-2" type="text" [(ngModel)]="searchText" (input)="SearchFinance()"
                    placeholder="Search by name"/>
             <table class="table table-striped table-bordered table-sm row-border hover" id="datatable_3">
               <thead>
               <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Quantity</th>
+                <th>Product</th>
+                <th>Unit Price</th>
                 <th>Balance</th>
-                <th>Action</th>
               </tr>
               </thead>
               <tbody>
-              <tr *ngFor="let group of listOfProducts">
-                <td>{{group.productId}}</td>
-                <td>{{group.description}}</td>
-                <td>{{group.quantityInStock}}</td>
-                <td>{{group.number}}</td>
-                <td>
-                  <button class="btn btn-primary m-2" (click)="openPopupEdit(group.productId,'product')">Edit</button>
-                  <button class="btn btn-danger" (click)="deleteItem(group)">Delete</button>
-                </td>
+              <tr *ngFor="let group of listOfFinances | paginate: {itemsPerPage: 5, currentPage: pageFinance};">
+                <td>{{group.product.description}}</td>
+                <td>{{group.unitPrice}}</td>
+                <td>{{group.balance}}</td>
               </tr>
               </tbody>
             </table>
+            <pagination-controls (pageChange)="pageFinance = $event"></pagination-controls>
           </div>
         </div>
       </div>

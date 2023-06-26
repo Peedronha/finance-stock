@@ -14,5 +14,4 @@ export class User{
         this.authStatus = authStatus || '';
         this.token = id ;
     }
-
 }
