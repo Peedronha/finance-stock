@@ -323,4 +323,11 @@ export class StockComponent {
       // });
     }
   }
+  key = 'id';
+  reverse: boolean = false;
+  p:number = 1;
+  sort(key:string){
+    this.key = key;
+    this.reverse = !this.reverse;
+  }
 }

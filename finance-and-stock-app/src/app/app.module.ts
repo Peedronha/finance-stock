@@ -34,6 +34,8 @@ import {MatTableModule} from "@angular/material/table";
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
+import {NgxPaginationModule} from "ngx-pagination";
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -54,7 +56,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
         ContactComponent,
     ],
   imports: [
-     BrowserModule,
+    BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
@@ -71,6 +73,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     MatCardModule,
     MatPaginatorModule,
     MatTableModule,
+    NgxPaginationModule
   ],
   providers: [
     {
