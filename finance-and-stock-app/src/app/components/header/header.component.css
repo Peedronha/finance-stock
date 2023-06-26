@@ -37,10 +37,11 @@ ul li a{
 }
 
 .header .logo {
+  color: var(--primary-color);
   display: block;
   float: left;
   font-size: 2em;
-  padding: 10px 20px;
+  padding: 7px 15px;
   text-decoration: none;
 }
 
