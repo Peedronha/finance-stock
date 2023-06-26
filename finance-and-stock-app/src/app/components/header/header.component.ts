@@ -8,8 +8,6 @@ import { User } from 'src/app/model/user.model';
 })
 export class HeaderComponent implements OnInit {
 
-  @Input() deviceXS: boolean | any;
-
   user = new User();
 
   selectedTheme: string | undefined;

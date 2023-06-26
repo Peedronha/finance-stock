@@ -12,6 +12,8 @@ import {TokenComponent} from "./components/token/token.component";
 import {NewPasswordComponent} from "./components/new-password/new-password.component";
 import {ContactComponent} from "./components/contact/contact.component";
 import {SobreComponent} from "./components/about/sobre.component";
+import {AddProductComponent} from "./components/dashboard/add-product/add-product.component";
+import {StockComponent} from "./components/stock/stock.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -27,7 +29,13 @@ const routes: Routes = [
     roles: ['USER', 'ADMIN']
   }},
   { path: 'token', component: TokenComponent},
-  { path: 'new-password', component: NewPasswordComponent}
+  { path: 'new-password', component: NewPasswordComponent},
+  { path: 'add-product', component: AddProductComponent, canActivate: [AuthGuard], data: {
+      roles: ['USER', 'ADMIN']
+    }},
+  { path: 'stock', component: StockComponent, canActivate: [AuthGuard], data: {
+      roles: ['USER', 'ADMIN']
+    }}
 ];
 
 @NgModule({

@@ -1,5 +1,5 @@
 export class Product {
-  productId?: number;
+  productId: number | any;
   description: string;
   number: number;
   price: number;
@@ -33,4 +33,5 @@ export class Product {
     this.packingVolume = packingVolume;
     this.registrationDate = registrationDate;
   }
+
 }

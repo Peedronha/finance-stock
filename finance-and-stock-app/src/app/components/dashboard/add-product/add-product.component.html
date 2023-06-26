@@ -1,1 +1,95 @@
-<p>add-product works!</p>
+<div class="container-fluid">
+  <div class="row">
+    <div id="box-form-subs">
+      <div id="box-form">
+        <div id="box-form-header">
+          <h2>Add Product</h2>
+        </div>
+        <div class="row content-top-gap">
+          <div class="col-lg-12">
+            <h1>
+              <ul class="my-breadcrumb breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active welcome-msg"><a href="/stock">Stock</a></li>
+              </ul>
+            </h1>
+            <div id="box-form-inputs">
+              <form (ngSubmit)="submitForm(productForm)" class="login100-form validate-form p-l-55 p-r-55 p-t-140"
+                    #productForm="ngForm">
+                <div class="form-group">
+                  <div class="wrap-input100 validate-input m-b-16" data-validate="Description">
+                    <input class="input100" type="text" name="description" id="description" placeholder="Description"
+                           required
+                           [(ngModel)]="product.description" #description="ngModel">
+                    <span class="focus-input100"></span>
+                  </div>
+                  <!--              <span class="text-error" *ngIf="(description.touched || productForm.submitted) && description.errors?.required">-->
+                  <!--                Error: Description is required!-->
+                  <!--              </span>-->
+                </div>
+                <div class="form-group">
+                  <div class="wrap-input100 validate-input m-b-16" data-validate="Number">
+                    <input class="input100" type="number" name="number" id="number" placeholder="Number" required
+                           [(ngModel)]="product.number" #number="ngModel">
+                    <span class="focus-input100"></span>
+                  </div>
+                  <!--              <span class="text-error" *ngIf="(number.touched || productForm.submitted) && number.errors?.required">-->
+                  <!--                Error: Number is required!-->
+                  <!--              </span>-->
+                </div>
+                <div class="form-group">
+                  <div class="wrap-input100 validate-input m-b-16" data-validate="Price">
+                    <input class="input100" type="number" name="price" id="price" placeholder="Price" required
+                           [(ngModel)]="product.price" #price="ngModel">
+                    <span class="focus-input100"></span>
+                  </div>
+                  <!--              <span class="text-error" *ngIf="(price.touched || productForm.submitted) && price.errors?.required">-->
+                  <!--                Error: Price is required!-->
+                  <!--              </span>-->
+                </div>
+                <div class="form-group">
+                  <div class="wrap-input100 validate-input m-b-16" data-validate="Quantity in Stock">
+                    <input class="input100" type="number" name="quantityInStock" id="quantityInStock"
+                           placeholder="Quantity in Stock" required
+                           [(ngModel)]="product.quantityInStock" #quantityInStock="ngModel">
+                    <span class="focus-input100"></span>
+                  </div>
+                  <!--              <span class="text-error" *ngIf="(quantityInStock.touched || productForm.submitted) && quantityInStock.errors?.required">-->
+                  <!--                Error: Quantity in Stock is required!-->
+                  <!--              </span>-->
+                </div>
+                <div class="form-group">
+                  <div class="wrap-input100 validate-input m-b-16" data-validate="Packing Volume">
+                    <input class="input100" type="text" name="packingVolume" id="packingVolume"
+                           placeholder="Packing Volume" required
+                           [(ngModel)]="product.packingVolume" #packingVolume="ngModel">
+                    <span class="focus-input100"></span>
+                  </div>
+                  <!--              <span class="text-error" *ngIf="(packingVolume.touched || productForm.submitted) && packingVolume.errors?.required">-->
+                  <!--                Error: Packing Volume is required!-->
+                  <!--              </span>-->
+                </div>
+                <div class="form-group">
+                  <div class="wrap-input100 validate-input m-b-16" data-validate="Registration Date">
+                    <input class="input100" type="date" name="registrationDate" id="registrationDate"
+                           placeholder="Registration Date" required
+                           [(ngModel)]="product.registrationDate" #registrationDate="ngModel">
+                    <span class="focus-input100"></span>
+                  </div>
+                  <!--              <span class="text-error" *ngIf="(registrationDate.touched || productForm.submitted) && registrationDate.errors?.required">-->
+                  <!--                Error: Registration Date is required!-->
+                  <!--              </span>-->
+                </div>
+                <div class="container-login100-form-btn">
+                  <button class="login100-form-btn" type="submit">
+                    Add Product
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

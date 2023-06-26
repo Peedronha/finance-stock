@@ -11,7 +11,6 @@ import { environment } from './../environments/environment.development';
 export class AppComponent implements OnInit, OnDestroy{
 
   mediaSub: Subscription | any;
-  deviceXS: boolean | any ;
   private activeMediaQuery: string = '';
 
   constructor(private mediaObserver:MediaObserver){

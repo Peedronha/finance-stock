@@ -14,7 +14,7 @@ export class RegisterComponent implements OnInit {
 
   customer = new Customer();
 
-  constructor(private homeService : HomeService,private router: Router) { }
+  constructor(private homeService : HomeService, private router: Router) { }
 
   ngOnInit(): void {
     this.customer = JSON.parse(sessionStorage.getItem('userdetails')!);

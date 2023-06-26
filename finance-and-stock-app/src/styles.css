@@ -132,3 +132,31 @@ font-family: Georgia, serif;
 .table-striped>tbody>tr:nth-child(odd)>th {
   background-color: var(--primary-color);
 }
+
+@media only screen and (min-width: 280px) and (max-width: 1440px) {
+  .box {
+    width: 100%;
+    float: none;
+    margin: 0;
+  }
+
+  #box-form {
+    width: 100%;
+    float: none;
+    margin: 0;
+    margin: 20px;
+  }
+
+  #box-form-inputs {
+    margin-top: 10%;
+  }
+
+  #box-form-subs {
+    margin-top: -10vh;
+  }
+}
+@media (max-width: 912px) {
+  .logo-box{
+    display: none;
+  }
+}

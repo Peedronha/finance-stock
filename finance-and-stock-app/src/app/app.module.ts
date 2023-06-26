@@ -13,6 +13,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ForgotComponent } from './components/forgot/forgot.component';
+import {SobreComponent} from "./components/about/sobre.component";
+import {ContactComponent} from "./components/contact/contact.component";
 import { ThemeComponent} from "./components/theme/theme.component";
 import { NewPasswordComponent } from './components/new-password/new-password.component';
 import { TokenComponent } from './components/token/token.component';
@@ -31,9 +33,7 @@ import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatTableModule} from "@angular/material/table";
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {SobreComponent} from "./components/about/sobre.component";
-import {ContactComponent} from "./components/contact/contact.component";
-import { EditProductComponent } from './components/edit-product/edit-product.component';
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -52,10 +52,9 @@ import { EditProductComponent } from './components/edit-product/edit-product.com
         AddProductComponent,
         SobreComponent,
         ContactComponent,
-        EditProductComponent
     ],
   imports: [
-    BrowserModule,
+     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
